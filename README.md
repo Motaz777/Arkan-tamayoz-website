@@ -1587,7 +1587,7 @@
                     </div>
                     <div class="contact-details">
                         <h4>العنوان</h4>
-                        <p>المملكة العربية السعودية - الرياض - حي الصناعية</p>
+                        <p>المملكة العربية السعودية - مكة المكرمة الشرائع</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1596,7 +1596,7 @@
                     </div>
                     <div class="contact-details">
                         <h4>الهاتف</h4>
-                        <a href="tel:+966500000000">+966 50 000 0000</a>
+                        <a href="tel:+966548451552">+966 551339988</a>
                     </div>
                 </div>
                 <div class="contact-item">
