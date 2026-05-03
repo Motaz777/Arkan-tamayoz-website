@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أركان التميز الذهبية | أجهزة السلامة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #C41E1E;
+            --primary-dark: #9A1616;
+            --secondary: #D2691E;
+            --gold: #D4AF37;
+            --gold-light: #F4D03F;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #C41E1E 0%, #D2691E 50%, #D4AF37 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 60px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: var(--white) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(196,30,30,0.3);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(212,175,55,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particle-float 15s infinite;
+        }
+
+        @keyframes particle-float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212,175,55,0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h2 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(196,30,30,0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196,30,30,0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(196,30,30,0.1);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(196,30,30,0.1), rgba(212,175,55,0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .products-section {
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 220px;
+            background: linear-gradient(135deg, #C41E1E, #D2691E);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .product-content {
+            padding: 1.8rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: rgba(196,30,30,0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .product-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .product-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .product-link:hover {
+            gap: 1rem;
+        }
+
+        .about-section {
+            background: var(--dark);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content h2 span {
+            color: var(--gold);
+        }
+
+        .about-content p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .about-feature i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .about-feature span {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-visual-inner {
+            background: linear-gradient(135deg, rgba(196,30,30,0.2), rgba(212,175,55,0.2));
+            border-radius: 30px;
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .about-logo-large {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+        }
+
+        .services-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .services-timeline::before {
+            content: '';
+            position: absolute;
+            right: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--gold));
+            transform: translateX(50%);
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .service-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .service-dot {
+            position: absolute;
+            right: 50%;
+            top: 0;
+            transform: translateX(50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px var(--primary);
+            z-index: 2;
+        }
+
+        .service-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 400px;
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .service-content::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+        }
+
+        .service-item:nth-child(odd) .service-content::after {
+            left: -10px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid var(--white);
+        }
+
+        .service-item:nth-child(even) .service-content::after {
+            right: -10px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--white);
+        }
+
+        .service-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: rgba(196,30,30,0.1);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+
+        .service-content h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .testimonials-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff5f5 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 800;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .testimonial-info span {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .cta-section {
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-container h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-container p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(196,30,30,0.1), rgba(212,175,55,0.1));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(196,30,30,0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(196,30,30,0.3);
+        }
+
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand img {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-column h4 {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-features {
+                justify-content: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .services-timeline::before {
+                right: 20px;
+            }
+
+            .service-item,
+            .service-item:nth-child(even) {
+                padding-right: 60px;
+                padding-left: 0;
+                justify-content: flex-start;
+            }
+
+            .service-dot {
+                right: 20px;
+                transform: translateX(50%);
+            }
+
+            .service-content {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .service-item:nth-child(odd) .service-content::after,
+            .service-item:nth-child(even) .service-content::after {
+                right: -10px;
+                left: auto;
+                border-right: 10px solid var(--white);
+                border-left: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(196,30,30,0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://i.imgur.com/placeholder.png" alt="أركان التميز الذهبية" id="logoImg">
+                <div class="logo-text">
+                    <h1>أركان التميز الذهبية</h1>
+                    <span>لأجهزة السلامة</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#products">منتجاتنا</a></li>
+                <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#contact" class="nav-cta">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i>
+                نحن نحمي ما يهمك
+            </div>
+            <h2>
+                حماية متكاملة<br>
+                <span>لمنشآتك وممتلكاتك</span>
+            </h2>
+            <p>
+                نقدم حلولاً متكاملة في مجال أجهزة السلامة والحماية من الحرائق، 
+                بأعلى معايير الجودة العالمية وشهادات الاعتماد الدولية
+            </p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    استعرض منتجاتنا
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-phone"></i>
+                    احصل على استشارة مجانية
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">سنة خبرة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">عميل سعيد</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">فريق متخصص</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">لماذا نحن</span>
+            <h2 class="section-title">معايير التميز الذهبية</h2>
+            <p class="section-subtitle">
+                نلتزم بأعلى معايير الجودة في تقديم حلول السلامة المتكاملة
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>شهادات معتمدة</h3>
+                <p>جميع منتجاتنا حاصلة على شهادات الجودة الدولية ISO ومعتمدة من الجهات الرسمية السعودية</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>صيانة دورية</h3>
+                <p>نقدم خدمات صيانة دورية شاملة لجميع أجهزة السلامة لضمان جاهزيتها في أي وقت</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>فريق متخصص</h3>
+                <p>فريقنا مؤهل ومعتمد دولياً في تركيب وصيانة جميع أنواع أجهزة الحماية من الحرائق</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>استجابة سريعة</h3>
+                <p>خدمة طوارئ على مدار 24 ساعة مع فريق استجابة سريعة لجميع المناطق</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3>أسعار تنافسية</h3>
+                <p>نقدم أفضل الأسعار في السوق مع الحفاظ على أعلى معايير الجودة العالمية</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>دعم فني مستمر</h3>
+                <p>فريق دعم فني متاح على مدار الساعة للإجابة على استفساراتكم وحل المشكلات</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section products-section" id="products">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">منتجاتنا</span>
+            <h2 class="section-title">حلول السلامة المتكاملة</h2>
+            <p class="section-subtitle">
+                نقدم مجموعة واسعة من أجهزة السلامة المعتمدة عالمياً
+            </p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card animate-on-scroll">
+                <div class="product-image">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">أجهزة إطفاء</span>
+                    <h3>طفايات الحريق</h3>
+                    <p>طفايات حريق متنوعة بأنواعها (CO2، مساحيق كيميائية، مياه، رغوة) بأحجام مختلفة تناسب جميع الاحتياجات</p>
+                    <a href="#contact" class="product-link">
+                        طلب عرض سعر <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card animate-on-scroll">
+                <div class="product-image">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">أنظمة إنذار</span>
+                    <h3>أنظمة الإنذار المبكر</h3>
+                    <p>كاشفات دخان وحرارة ولهب ذكية متصلة بأنظمة إنذار مركزية مع إشعارات فورية</p>
+                    <a href="#contact" class="product-link">
+                        طلب عرض سعر <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card animate-on-scroll">
+                <div class="product-image">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">أنظمة رش</span>
+                    <h3>أنظمة الإطفاء التلقائي</h3>
+                    <p>أنظمة رش آلي (Sprinkler) وأنظمة إطفاء بالغازات النظيفة للمنشآت الحساسة</p>
+                    <a href="#contact" class="product-link">
+                        طلب عرض سعر <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card animate-on-scroll">
+                <div class="product-image">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">معدات وقاية</span>
+                    <h3>معدات الوقاية الشخصية</h3>
+                    <p>خوذات واقية، أقنعة تنفس، بذلات وقاية من الحريق، قفازات مقاومة للحرارة</p>
+                    <a href="#contact" class="product-link">
+                        طلب عرض سعر <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card animate-on-scroll">
+                <div class="product-image">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">أبواب طوارئ</span>
+                    <h3>أبواب وبوابات طوارئ</h3>
+                    <p>أبواب مقاومة للحريق بمختلف الدرجات، بوابات إخلاء مضيئة، لافتات إرشادية</p>
+                    <a href="#contact" class="product-link">
+                        طلب عرض سعر <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card animate-on-scroll">
+                <div class="product-image">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <div class="product-content">
+                    <span class="product-tag">خدمات استشارية</span>
+                    <h3>دراسات السلامة</h3>
+                    <p>دراسات تقييم المخاطر، خطط الإخلاء، التدريب على مكافحة الحرائق والإسعافات الأولية</p>
+                    <a href="#contact" class="product-link">
+                        طلب عرض سعر <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-content animate-on-scroll">
+                <h2>من نحن <span>أركان التميز الذهبية</span></h2>
+                <p>
+                    تأسست مؤسسة أركان التميز الذهبية لأجهزة السلامة بهدف تقديم أعلى مستويات الحماية والأمان 
+                    للمنشآت والأفراد. نحن نؤمن بأن السلامة ليست مجرد التزام قانوني، بل هي مسؤولية أخلاقية 
+                    تجاه الأرواح والممتلكات.
+                </p>
+                <p>
+                    نقدم حلولاً متكاملة تشمل توريد وتركيب وصيانة جميع أنواع أجهزة السلامة والحماية من الحرائق، 
+                    مع فريق متخصص من المهندسين والفنيين المعتمدين دولياً.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>جودة عالمية</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ضمان شامل</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تركيب احترافي</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>متابعة دورية</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual animate-on-scroll">
+                <div class="about-visual-inner">
+                    <div style="width: 100%; max-width: 300px; margin: 0 auto; height: 200px; background: linear-gradient(135deg, rgba(196,30,30,0.3), rgba(212,175,55,0.3)); border-radius: 20px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.2);">
+                        <i class="fas fa-shield-alt" style="font-size: 5rem; color: var(--gold);"></i>
+                    </div>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 0.5rem;">أركان التميز الذهبية</h3>
+                        <p style="color: rgba(255,255,255,0.7);">شريكك الموثوق في السلامة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">خدماتنا</span>
+            <h2 class="section-title">رحلة السلامة معنا</h2>
+            <p class="section-subtitle">
+                نرافقك في كل خطوة لضمان أعلى مستويات الحماية
+            </p>
+        </div>
+        <div class="services-timeline">
+            <div class="service-item animate-on-scroll">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <span class="service-number">01</span>
+                    <h3>الاستشارة والتقييم</h3>
+                    <p>زيارة ميدانية مجانية لتقييم احتياجات منشأتك وتحديد أفضل الحلول المناسبة</p>
+                </div>
+            </div>
+            <div class="service-item animate-on-scroll">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <span class="service-number">02</span>
+                    <h3>التصميم والتخطيط</h3>
+                    <p>تصميم أنظمة السلامة المخصصة وفقاً لأحدث المعايير الهندسية والقوانين المحلية</p>
+                </div>
+            </div>
+            <div class="service-item animate-on-scroll">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <span class="service-number">03</span>
+                    <h3>التوريد والتركيب</h3>
+                    <p>توريد أجهزة معتمدة وتركيب احترافي بأيدي فنيين معتمدين دولياً</p>
+                </div>
+            </div>
+            <div class="service-item animate-on-scroll">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <span class="service-number">04</span>
+                    <h3>الصيانة الدورية</h3>
+                    <p>عقود صيانة دورية شاملة لضمان جاهزية جميع الأجهزة على مدار العام</p>
+                </div>
+            </div>
+            <div class="service-item animate-on-scroll">
+                <div class="service-dot"></div>
+                <div class="service-content">
+                    <span class="service-number">05</span>
+                    <h3>التدريب والتوعية</h3>
+                    <p>برامج تدريبية عملية للعاملين على استخدام أجهزة الإطفاء وإجراءات الطوارئ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials-section" id="testimonials">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">آراء العملاء</span>
+            <h2 class="section-title">ثقة عملائنا شرف لنا</h2>
+            <p class="section-subtitle">
+                نفخر بثقة مئات العملاء في مختلف القطاعات
+            </p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "تعاملنا مع أركان التميز الذهبية في تجهيز فندقنا بأحدث أجهزة الإنذار والإطفاء. 
+                    الخدمة ممتازة والفريق محترف جداً. أنصح بهم بشدة."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">م</div>
+                    <div class="testimonial-info">
+                        <h4>م. خالد العمري</h4>
+                        <span>مدير عام - مجموعة فنادق</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "سرعة الاستجابة والالتزام بالمواعيد من أهم مميزاتهم. قاموا بتركيب نظام إطفاء تلقائي 
+                    لمصنعنا في وقت قياسي وبجودة عالية."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">أ</div>
+                    <div class="testimonial-info">
+                        <h4>أ. فهد السبيعي</h4>
+                        <span>صاحب مصنع - القطاع الصناعي</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">
+                    "عقد الصيانة السنوي معهم يمنحنا راحة البال. فريق متابع دوري ودقيق، 
+                    وأسعارهم منافسة جداً مقارنة بالجودة المقدمة."
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">د</div>
+                    <div class="testimonial-info">
+                        <h4>د. نورة القحطاني</h4>
+                        <span>مديرة مستشفى - القطاع الصحي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>هل تبحث عن حماية متكاملة لمنشأتك؟</h2>
+            <p>
+                احصل على استشارة مجانية من خبرائنا واكتشف أفضل الحلول المخصصة لاحتياجاتك
+            </p>
+            <a href="#contact" class="cta-btn">
+                <i class="fas fa-phone"></i>
+                تواصل معنا الآن
+            </a>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">تواصل معنا</span>
+            <h2 class="section-title">نحن هنا لمساعدتك</h2>
+            <p class="section-subtitle">
+                لا تتردد في التواصل معنا لأي استفسار أو طلب عرض سعر
+            </p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info animate-on-scroll">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>العنوان</h4>
+                        <p>المملكة العربية السعودية - الرياض - حي الصناعية</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>الهاتف</h4>
+                        <a href="tel:+966500000000">+966 50 000 0000</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>البريد الإلكتروني</h4>
+                        <a href="mailto:info@arkan-tamayoz.com">info@arkan-tamayoz.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>ساعات العمل</h4>
+                        <p>السبت - الخميس: 8:00 ص - 6:00 م<br>الجمعة: مغلق</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>طوارئ 24/7</h4>
+                        <a href="tel:+966500000001">+966 50 000 0001</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form animate-on-scroll">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الجوال</label>
+                        <input type="tel" placeholder="05xxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>نوع الخدمة</label>
+                        <select required>
+                            <option value="">اختر نوع الخدمة</option>
+                            <option value="extinguisher">طفايات حريق</option>
+                            <option value="alarm">أنظمة إنذار</option>
+                            <option value="sprinkler">أنظمة رش آلي</option>
+                            <option value="maintenance">صيانة دورية</option>
+                            <option value="consulting">استشارات</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الرسالة</label>
+                        <textarea placeholder="اكتب تفاصيل طلبك هنا..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        إرسال الطلب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #C41E1E, #D4AF37); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: white;"></i>
+                </div>
+                <p>
+                    مؤسسة أركان التميز الذهبية لأجهزة السلامة - شريكك الموثوق في مجال الحماية من الحرائق 
+                    والسلامة. نقدم حلولاً متكاملة بأعلى معايير الجودة العالمية.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-left"></i> من نحن</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-left"></i> خدماتنا</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> منتجاتنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>خدماتنا</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> توريد أجهزة السلامة</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> تركيب الأنظمة</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> الصيانة الدورية</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> التدريب والتوعية</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>الدعم</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الضمان</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> الشروط والأحكام</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-left"></i> تواصل معنا</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 أركان التميز الذهبية لأجهزة السلامة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        const counters = document.querySelectorAll('.stat-number');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            entry.target.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتواصلك معنا! سيتم الرد عليك في أقرب وقت.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
